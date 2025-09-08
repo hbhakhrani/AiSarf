@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Plan: Arabic Verb Conjugation API</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Learn Arabic Sarf: Verb Conjugator</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
@@ -64,25 +64,25 @@
 
     <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-7xl">
         <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-[#A0522D]">Interactive API Plan</h1>
-            <p class="text-lg text-gray-600 mt-2">A simulator for Arabic verb conjugation based on the development plan.</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-[#A0522D]">Arabic Verb Conjugator</h1>
+            <p class="text-lg text-gray-600 mt-2">Master Arabic verb conjugation (sarf). Enter a three-letter root to see how it changes for every pronoun.</p>
         </header>
 
         <nav class="flex justify-center border-b border-gray-200 mb-8">
-            <button data-tab="phase1" class="tab-btn tab-active text-lg py-3 px-6 border-b-2 focus:outline-none">Phase 1: Past Tense</button>
-            <button data-tab="phase2" class="tab-btn tab-inactive text-lg py-3 px-6 border-b-2 focus:outline-none">Phase 2: Present Tense</button>
-            <button data-tab="phase3" class="tab-btn tab-inactive text-lg py-3 px-6 border-b-2 focus:outline-none">Phase 3: Irregular Verbs</button>
+            <button data-tab="phase1" class="tab-btn tab-active text-lg py-3 px-6 border-b-2 focus:outline-none">Past Tense</button>
+            <button data-tab="phase2" class="tab-btn tab-inactive text-lg py-3 px-6 border-b-2 focus:outline-none">Present Tense</button>
+            <button data-tab="phase3" class="tab-btn tab-inactive text-lg py-3 px-6 border-b-2 focus:outline-none">Special Verbs</button>
         </nav>
 
         <main>
             <div id="phase1" class="tab-content">
                 <div class="text-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Regular Past Tense Conjugation</h2>
-                    <p class="text-gray-600 mt-1 max-w-2xl mx-auto">This phase aims to create an endpoint that conjugates any sound, three-letter verb in the past tense. Enter the three root letters below to simulate this functionality.</p>
+                    <h2 class="text-2xl font-semibold text-gray-800">Past Tense (الماضي)</h2>
+                    <p class="text-gray-600 mt-1 max-w-2xl mx-auto">Learn the basic past tense for regular, three-letter verbs. Enter the three root letters below to see the full conjugation table.</p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="lg:col-span-1 card p-6">
-                        <h3 class="text-xl font-semibold mb-4 text-center">Enter 3-Letter Root</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Enter Root Letters</h3>
                         <div class="flex justify-center gap-3 mb-4" dir="rtl">
                             <input type="text" id="p1-r3" maxlength="1" class="w-16 h-16 rounded-lg border-2 focus:ring-2 focus:ring-[#A0522D] focus:border-[#A0522D] arabic-text">
                             <input type="text" id="p1-r2" maxlength="1" class="w-16 h-16 rounded-lg border-2 focus:ring-2 focus:ring-[#A0522D] focus:border-[#A0522D] arabic-text">
@@ -96,27 +96,17 @@
                             <p class="text-center text-gray-500">The conjugation table will appear here.</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-semibold mb-4">Request Body (JSON)</h3>
-                            <pre class="bg-gray-100 p-4 rounded-lg"><code id="p1-request-json"></code></pre>
-                        </div>
-                        <div class="card p-6">
-                            <h3 class="text-xl font-semibold mb-4">Success Response (JSON)</h3>
-                            <pre class="bg-gray-100 p-4 rounded-lg h-96 overflow-y-auto"><code id="p1-response-json"></code></pre>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div id="phase2" class="tab-content hidden">
                 <div class="text-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Regular Present Tense Conjugation</h2>
-                    <p class="text-gray-600 mt-1 max-w-2xl mx-auto">This phase expands to include present tense conjugation, which involves prefixes and suffixes. This simulator assumes the middle root vowel is a fatha (e.g., يَفعَلُ).</p>
+                    <h2 class="text-2xl font-semibold text-gray-800">Present Tense (المضارع)</h2>
+                    <p class="text-gray-600 mt-1 max-w-2xl mx-auto">Explore the present tense, which adds prefixes and suffixes to the root. This example uses the common 'yef'alu' (يَفعَلُ) pattern.</p>
                 </div>
                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="lg:col-span-1 card p-6">
-                        <h3 class="text-xl font-semibold mb-4 text-center">Enter 3-Letter Root</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Enter Root Letters</h3>
                         <div class="flex justify-center gap-3 mb-4" dir="rtl">
                             <input type="text" id="p2-r3" maxlength="1" class="w-16 h-16 rounded-lg border-2 focus:ring-2 focus:ring-[#A0522D] focus:border-[#A0522D] arabic-text">
                             <input type="text" id="p2-r2" maxlength="1" class="w-16 h-16 rounded-lg border-2 focus:ring-2 focus:ring-[#A0522D] focus:border-[#A0522D] arabic-text">
@@ -130,23 +120,13 @@
                            <p class="text-center text-gray-500">The conjugation table will appear here.</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="card p-6">
-                            <h3 class="text-xl font-semibold mb-4">Request Body (JSON)</h3>
-                            <pre class="bg-gray-100 p-4 rounded-lg"><code id="p2-request-json"></code></pre>
-                        </div>
-                        <div class="card p-6">
-                            <h3 class="text-xl font-semibold mb-4">Success Response (JSON)</h3>
-                            <pre class="bg-gray-100 p-4 rounded-lg h-96 overflow-y-auto"><code id="p2-response-json"></code></pre>
-                        </div>
-                    </div>
                 </div>
             </div>
             
             <div id="phase3" class="tab-content hidden">
                 <div class="text-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Handling Irregular Verbs</h2>
-                    <p class="text-gray-600 mt-1 max-w-2xl mx-auto">This is the most complex phase, requiring transformational rules instead of simple concatenation. Select an irregular verb type to see an example of its rule and conjugation.</p>
+                    <h2 class="text-2xl font-semibold text-gray-800">Special Verb Types</h2>
+                    <p class="text-gray-600 mt-1 max-w-2xl mx-auto">Some verbs follow special patterns. These are often called weak or irregular verbs. Select a type to see how its conjugation differs from regular verbs.</p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="lg:col-span-1 card p-6">
@@ -178,3 +158,4 @@
     <script src="script.js" defer></script>
 </body>
 </html>
+
