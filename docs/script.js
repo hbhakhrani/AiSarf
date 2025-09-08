@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             requestJsonEl.textContent = formatJSON({ root: [r1.value, r2.value, r3.value] });
             responseJsonEl.textContent = '';
         }));
+        conjugate();
     };
 
     const setupPhase2 = (elements) => {
